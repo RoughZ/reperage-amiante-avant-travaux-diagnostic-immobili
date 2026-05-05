@@ -159,13 +159,14 @@ article blockquote{border-left:4px solid #e5e7eb;padding-left:1rem;margin:1.5rem
 </div>
 <script>
 (function(){
+  var k='cookie_consent_'+window.location.pathname.split('/')[1];
   var b=document.getElementById('cookie-banner');
-  if(!localStorage.getItem('cookie_consent'))b.style.display='';
+  if(!localStorage.getItem(k))b.style.display='';
   document.getElementById('cookie-accept').onclick=function(){
-    localStorage.setItem('cookie_consent','accepted');b.style.display='none';
+    localStorage.setItem(k,'accepted');b.style.display='none';
   };
   document.getElementById('cookie-refuse').onclick=function(){
-    localStorage.setItem('cookie_consent','refused');b.style.display='none';
+    localStorage.setItem(k,'refused');b.style.display='none';
   };
 })();
 </script>
